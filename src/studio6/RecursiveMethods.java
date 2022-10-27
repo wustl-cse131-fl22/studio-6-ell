@@ -1,5 +1,7 @@
 package studio6;
 
+import org.junit.jupiter.api.io.TempDir;
+
 import edu.princeton.cs.introcs.StdDraw;
 
 public class RecursiveMethods {
@@ -12,9 +14,13 @@ public class RecursiveMethods {
 	 *         ...)
 	 */
 	public static double geometricSum(int n) {
-		
+		{
+		    if (n == 0)
+		        return 0;
+		    else
+		        return  geometricSum(n - 1)+ Math.pow(0.5, n);
+		}
 			// FIXME compute the geometric sum for the first n terms recursively
-			return 0;
 		
 	}
 
@@ -27,9 +33,15 @@ public class RecursiveMethods {
 	 * @return greatest common divisor of p and q
 	 */
 	public static int gcd(int p, int q) {
-		
+		{
+		    if (q == 0)
+		        return p;
+		    else {
+				return gcd(q, p%q);
+			}
+		}
 			// FIXME compute the gcd of p and q using recursion
-			return 0;
+		
 		
 	}
 
